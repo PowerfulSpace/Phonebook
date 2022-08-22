@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace PS.Phonebook.Web.Data.Migrations
+namespace PS.Phonebook.DAL.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PS.Phonebook.Web.Data
+namespace PS.Phonebook.DAL.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

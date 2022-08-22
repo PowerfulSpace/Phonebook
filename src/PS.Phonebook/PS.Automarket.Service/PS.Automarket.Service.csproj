@@ -9,4 +9,8 @@
     <Folder Include="Implementations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PS.Phonebook.DAL\PS.Phonebook.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
