@@ -30,8 +30,4 @@
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17" />	  
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PS.Automarket.Domain\PS.Phonebook.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

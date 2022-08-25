@@ -12,7 +12,7 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PS.Automarket.Service\PS.Automarket.Service.csproj" />
+    <ProjectReference Include="..\PS.Automarket.Service\PS.Phonebook.Service.csproj" />
   </ItemGroup>
 
 </Project>
