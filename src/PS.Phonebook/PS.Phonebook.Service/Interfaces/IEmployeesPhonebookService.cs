@@ -11,6 +11,7 @@ namespace PS.Phonebook.Service.Interfaces
 {
     public interface IEmployeesPhonebookService
     {
+
         public Task<IBaseResponse<EmployeesPhonebook>> GetEmployeesPhonebookAsync(int id);
         public Task<IBaseResponse<EmployeesPhonebook>> GetAllEmployeesPhonebooksAsync();
 
