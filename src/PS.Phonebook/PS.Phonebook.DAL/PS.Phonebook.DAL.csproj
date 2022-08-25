@@ -28,6 +28,10 @@
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17" />	  
+  </ItemGroup>		
+
+  <ItemGroup>
+    <ProjectReference Include="..\PS.Phonebook.Domain\PS.Phonebook.Domain.csproj" />
   </ItemGroup>
 
 </Project>
