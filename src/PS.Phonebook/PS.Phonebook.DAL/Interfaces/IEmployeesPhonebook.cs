@@ -3,7 +3,7 @@ using PS.Phonebook.Domain.Entities;
 
 namespace PS.Phonebook.DAL.Interfaces
 {
-    public interface IDepartment : IBaseRepository<Department>
+    public interface IEmployeesPhonebook : IBaseRepository<EmployeesPhonebook>
     {
-    } 
+    }
 }

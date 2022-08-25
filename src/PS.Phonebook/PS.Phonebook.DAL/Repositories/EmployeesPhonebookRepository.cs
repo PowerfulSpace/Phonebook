@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace PS.Phonebook.DAL.Repositories
 {
-    public class DepartmentReposotiry : IDepartment
+    public class EmployeesPhonebookRepository : IEmployeesPhonebook
     {
         private readonly ApplicationDbContext _dbContext;
-        public DepartmentReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
+        public EmployeesPhonebookRepository(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<Department> Get(int id) => await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<EmployeesPhonebook> Get(int id) => await _dbContext.EmployeesPhonebooks.FirstOrDefaultAsync(x => x.Id == id);
 
-        public IQueryable<Department> GetAll() => _dbContext.Departments;
+        public IQueryable<EmployeesPhonebook> GetAll() => _dbContext.EmployeesPhonebooks;
 
 
-        public async Task<Department> Create(Department entity)
+        public async Task<EmployeesPhonebook> Create(EmployeesPhonebook entity)
         {
-            if(entity == null) { return null!; }
+            if (entity == null) { return null!; }
             try
             {
-                await _dbContext.Departments.AddAsync(entity);
+                await _dbContext.EmployeesPhonebooks.AddAsync(entity);
                 _dbContext.Entry(entity).State = EntityState.Added;
                 await _dbContext.SaveChangesAsync();
             }
@@ -33,7 +33,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Department> Update(Department entity)
+        public async Task<EmployeesPhonebook> Update(EmployeesPhonebook entity)
         {
             if (entity == null) { return null!; }
             try
@@ -47,7 +47,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Department> Delet(Department entity)
+        public async Task<EmployeesPhonebook> Delet(EmployeesPhonebook entity)
         {
             if (entity == null) { return null!; }
             try
@@ -60,6 +60,5 @@ namespace PS.Phonebook.DAL.Repositories
 
             return entity;
         }
-
     }
 }

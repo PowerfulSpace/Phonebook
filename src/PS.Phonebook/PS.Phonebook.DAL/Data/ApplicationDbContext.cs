@@ -14,6 +14,7 @@ namespace PS.Phonebook.DAL.Data
         {
         }
 
+        public DbSet<EmployeesPhonebook> EmployeesPhonebooks { get; set; } = null!;
         public DbSet<Department> Departments { get; set; } = null!;
         public DbSet<Employee> Employees { get; set; } = null!;
         public DbSet<Organization> Organizations { get; set; } = null!;

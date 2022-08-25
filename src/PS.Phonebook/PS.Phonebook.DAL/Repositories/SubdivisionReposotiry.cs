@@ -10,7 +10,6 @@ namespace PS.Phonebook.DAL.Repositories
 {
     public class SubdivisionReposotiry : ISubdivision
     {
-
         private readonly ApplicationDbContext _dbContext;
         public SubdivisionReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
 

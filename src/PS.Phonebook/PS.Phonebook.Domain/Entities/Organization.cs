@@ -6,7 +6,6 @@ namespace PS.Phonebook.Domain.Entities
     public class Organization
     {
         public int Id { get; set; }
-        public int Index { get; set; }
         public string Name { get; set; } = "МИНИСТЕРСТВО ТРАНСПОРТА И КОММУНИКАЦИЙ";
         public Organization1? Organization1 { get; set; } = null!;
         public Organization2? Organization2 { get; set; } = null!;
@@ -21,7 +20,7 @@ namespace PS.Phonebook.Domain.Entities
 
         public string Fax1 { get; set; } = null!;
         public string Fax2 { get; set; } = null!;
-        public string CodAMTC { get; set; } = null!;
+        public string CodeAMTC { get; set; } = null!;
 
         public string FramePhoneCode { get; set; } = null!;
         public int FramePhone { get; set; }
