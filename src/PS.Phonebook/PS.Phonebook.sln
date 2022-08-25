@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{2BF1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{202B8D9C-E135-4BA3-B0C7-E233075F51C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Phonebook.Web", "PS.Phonebook.Web\PS.Phonebook.Web.csproj", "{2D4958C4-EA90-4A5E-9AF0-4ADC559549D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Phonebook.Web", "PS.Phonebook.Web\PS.Phonebook.Web.csproj", "{2D4958C4-EA90-4A5E-9AF0-4ADC559549D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Phonebook.DAL", "PS.Phonebook.DAL\PS.Phonebook.DAL.csproj", "{C64ECFD4-9B19-415D-9685-A1D5624D0960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Phonebook.DAL", "PS.Phonebook.DAL\PS.Phonebook.DAL.csproj", "{C64ECFD4-9B19-415D-9685-A1D5624D0960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Automarket.Domain", "PS.Automarket.Domain\PS.Automarket.Domain.csproj", "{1CFF204B-7B46-4E3F-B112-2183A1EF6003}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Phonebook.Domain", "PS.Automarket.Domain\PS.Phonebook.Domain.csproj", "{1CFF204B-7B46-4E3F-B112-2183A1EF6003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Automarket.Service", "PS.Automarket.Service\PS.Automarket.Service.csproj", "{71988025-4B10-4F56-B023-F04EAB32BE8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Phonebook.Service", "PS.Automarket.Service\PS.Phonebook.Service.csproj", "{71988025-4B10-4F56-B023-F04EAB32BE8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
