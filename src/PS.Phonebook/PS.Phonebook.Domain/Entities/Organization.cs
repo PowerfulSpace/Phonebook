@@ -5,7 +5,7 @@ namespace PS.Phonebook.Domain.Entities
 {
     public class Organization
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int Index { get; set; }
         public string Name { get; set; } = "МИНИСТЕРСТВО ТРАНСПОРТА И КОММУНИКАЦИЙ";
         public Organization1? Organization1 { get; set; } = null!;

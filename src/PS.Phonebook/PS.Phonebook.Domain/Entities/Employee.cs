@@ -4,7 +4,7 @@ namespace PS.Phonebook.Domain.Entities
 {
     public class Employee
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Surname { get; set; } = null!;
         public string Name { get; set; } = null!;
