@@ -8,10 +8,10 @@ namespace PS.Phonebook.DAL.Interfaces.Base
 {
     public interface IBaseRepository<T>
     {
-        public Task<T> Create(T entity);
-        public Task<T> Get(int id);
+        public Task<T> CreateAsync(T entity);
+        public Task<T> GetAsync(int id);
         public IQueryable<T> GetAll();
-        public Task<T> Delet(T entity);
-        public Task<T> Update(T entity);
+        public Task<T> DeletAsync(T entity);
+        public Task<T> UpdateAsync(T entity);
     }
 }

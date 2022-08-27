@@ -14,12 +14,12 @@ namespace PS.Phonebook.DAL.Repositories
         public SubdivisionReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<Subdivision> Get(int id) => await _dbContext.Subdivisions.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Subdivision> GetAsync(int id) => await _dbContext.Subdivisions.FirstOrDefaultAsync(x => x.Id == id);
 
         public IQueryable<Subdivision> GetAll() => _dbContext.Subdivisions;
 
 
-        public async Task<Subdivision> Create(Subdivision entity)
+        public async Task<Subdivision> CreateAsync(Subdivision entity)
         {
             if (entity == null) { return null!; }
             try
@@ -33,7 +33,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Subdivision> Update(Subdivision entity)
+        public async Task<Subdivision> UpdateAsync(Subdivision entity)
         {
             if (entity == null) { return null!; }
             try
@@ -47,7 +47,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Subdivision> Delet(Subdivision entity)
+        public async Task<Subdivision> DeletAsync(Subdivision entity)
         {
             if (entity == null) { return null!; }
             try

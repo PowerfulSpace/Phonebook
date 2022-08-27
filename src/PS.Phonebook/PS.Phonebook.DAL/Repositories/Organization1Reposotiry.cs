@@ -14,12 +14,12 @@ namespace PS.Phonebook.DAL.Repositories
         public Organization1Reposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<Organization1> Get(int id) => await _dbContext.Organizations1.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Organization1> GetAsync(int id) => await _dbContext.Organizations1.FirstOrDefaultAsync(x => x.Id == id);
 
         public IQueryable<Organization1> GetAll() => _dbContext.Organizations1;
 
 
-        public async Task<Organization1> Create(Organization1 entity)
+        public async Task<Organization1> CreateAsync(Organization1 entity)
         {
             if (entity == null) { return null!; }
             try
@@ -33,7 +33,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Organization1> Update(Organization1 entity)
+        public async Task<Organization1> UpdateAsync(Organization1 entity)
         {
             if (entity == null) { return null!; }
             try
@@ -47,7 +47,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Organization1> Delet(Organization1 entity)
+        public async Task<Organization1> DeletAsync(Organization1 entity)
         {
             if (entity == null) { return null!; }
             try

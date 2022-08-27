@@ -10,7 +10,6 @@ namespace PS.Phonebook.Domain.Entities
     {
         public int Id { get; set; }
         public int Index { get; set; }
-        public Employee Employees { get; set; }
-        public Organization Organizations { get; set; }
+        public Employee Employee { get; set; } = null!;
     }
 }

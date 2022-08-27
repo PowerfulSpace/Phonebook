@@ -14,12 +14,12 @@ namespace PS.Phonebook.DAL.Repositories
         public EmployeesPhonebookRepository(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<EmployeesPhonebook> Get(int id) => await _dbContext.EmployeesPhonebooks.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<EmployeesPhonebook> GetAsync(int id) => await _dbContext.EmployeesPhonebooks.FirstOrDefaultAsync(x => x.Id == id);
 
         public IQueryable<EmployeesPhonebook> GetAll() => _dbContext.EmployeesPhonebooks;
 
 
-        public async Task<EmployeesPhonebook> Create(EmployeesPhonebook entity)
+        public async Task<EmployeesPhonebook> CreateAsync(EmployeesPhonebook entity)
         {
             if (entity == null) { return null!; }
             try
@@ -33,7 +33,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<EmployeesPhonebook> Update(EmployeesPhonebook entity)
+        public async Task<EmployeesPhonebook> UpdateAsync(EmployeesPhonebook entity)
         {
             if (entity == null) { return null!; }
             try
@@ -47,7 +47,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<EmployeesPhonebook> Delet(EmployeesPhonebook entity)
+        public async Task<EmployeesPhonebook> DeletAsync(EmployeesPhonebook entity)
         {
             if (entity == null) { return null!; }
             try

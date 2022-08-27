@@ -14,12 +14,12 @@ namespace PS.Phonebook.DAL.Repositories
         public DepartmentReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<Department> Get(int id) => await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Department> GetAsync(int id) => await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);
 
         public IQueryable<Department> GetAll() => _dbContext.Departments;
 
 
-        public async Task<Department> Create(Department entity)
+        public async Task<Department> CreateAsync(Department entity)
         {
             if(entity == null) { return null!; }
             try
@@ -33,7 +33,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Department> Update(Department entity)
+        public async Task<Department> UpdateAsync(Department entity)
         {
             if (entity == null) { return null!; }
             try
@@ -47,7 +47,7 @@ namespace PS.Phonebook.DAL.Repositories
             return entity;
         }
 
-        public async Task<Department> Delet(Department entity)
+        public async Task<Department> DeletAsync(Department entity)
         {
             if (entity == null) { return null!; }
             try

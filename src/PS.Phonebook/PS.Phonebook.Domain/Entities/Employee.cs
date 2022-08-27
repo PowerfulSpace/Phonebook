@@ -6,8 +6,8 @@ namespace PS.Phonebook.Domain.Entities
     {
         public int Id { get; set; }
 
+        public string FirstName { get; set; } = null!;
         public string Surname { get; set; } = null!;
-        public string Name { get; set; } = null!;
         public string Patronymic { get; set; } = null!;
 
         public Position Position { get; set; } = null!;
