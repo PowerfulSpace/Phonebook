@@ -23,6 +23,5 @@ namespace PS.Phonebook.DAL.Data
         public DbSet<Organization3> Organizations3 { get; set; } = null!;
         public DbSet<Position> Positions { get; set; } = null!;
         public DbSet<Subdivision> Subdivisions { get; set; } = null!;
-        public object Organization3s { get; internal set; }
     }
 }

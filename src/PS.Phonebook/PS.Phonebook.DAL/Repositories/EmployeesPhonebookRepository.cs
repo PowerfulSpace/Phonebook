@@ -28,7 +28,7 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Added;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
@@ -42,7 +42,7 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Modified;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
@@ -56,7 +56,7 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Deleted;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }

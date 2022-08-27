@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace PS.Phonebook.DAL.Repositories
 {
-    public class SubdivisionReposotiry : ISubdivision
+    public class PositionRepository : IPosition
     {
         private readonly ApplicationDbContext _dbContext;
-        public SubdivisionReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
+        public PositionRepository(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<Subdivision> GetAsync(int id) => await _dbContext.Subdivisions.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Position> GetAsync(int id) => await _dbContext.Positions.FirstOrDefaultAsync(x => x.Id == id);
 
-        public IQueryable<Subdivision> GetAll() => _dbContext.Subdivisions;
+        public IQueryable<Position> GetAll() => _dbContext.Positions;
 
 
-        public async Task<Subdivision> CreateAsync(Subdivision entity)
+        public async Task<Position> CreateAsync(Position entity)
         {
             if (entity == null) { return null!; }
             try
             {
-                await _dbContext.Subdivisions.AddAsync(entity);
+                await _dbContext.Positions.AddAsync(entity);
                 _dbContext.Entry(entity).State = EntityState.Added;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
 
-        public async Task<Subdivision> UpdateAsync(Subdivision entity)
+        public async Task<Position> UpdateAsync(Position entity)
         {
             if (entity == null) { return null!; }
             try
@@ -42,12 +42,12 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Modified;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
 
-        public async Task<Subdivision> DeletAsync(Subdivision entity)
+        public async Task<Position> DeletAsync(Position entity)
         {
             if (entity == null) { return null!; }
             try
@@ -56,7 +56,7 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Deleted;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }

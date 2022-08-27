@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace PS.Phonebook.DAL.Repositories
 {
-    public class DepartmentReposotiry : IDepartment
+    public class OrganizationReposotiry : IOrganization
     {
         private readonly ApplicationDbContext _dbContext;
-        public DepartmentReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
+        public OrganizationReposotiry(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-        public async Task<Department> GetAsync(int id) => await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<Organization> GetAsync(int id) => await _dbContext.Organizations.FirstOrDefaultAsync(x => x.Id == id);
 
-        public IQueryable<Department> GetAll() => _dbContext.Departments;
+        public IQueryable<Organization> GetAll() => _dbContext.Organizations;
 
 
-        public async Task<Department> CreateAsync(Department entity)
+        public async Task<Organization> CreateAsync(Organization entity)
         {
-            if(entity == null) { return null!; }
+            if (entity == null) { return null!; }
             try
             {
-                await _dbContext.Departments.AddAsync(entity);
+                await _dbContext.Organizations.AddAsync(entity);
                 _dbContext.Entry(entity).State = EntityState.Added;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
 
-        public async Task<Department> UpdateAsync(Department entity)
+        public async Task<Organization> UpdateAsync(Organization entity)
         {
             if (entity == null) { return null!; }
             try
@@ -42,12 +42,12 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Modified;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
 
-        public async Task<Department> DeletAsync(Department entity)
+        public async Task<Organization> DeletAsync(Organization entity)
         {
             if (entity == null) { return null!; }
             try
@@ -56,10 +56,9 @@ namespace PS.Phonebook.DAL.Repositories
                 _dbContext.Entry(entity).State = EntityState.Deleted;
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             return entity;
         }
-
     }
 }
