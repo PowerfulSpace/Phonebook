@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PS.Phonebook.DAL.Interfaces;
 using PS.Phonebook.DAL.Repositories;
-using PS.Phonebook.Domain.Entities;
-using PS.Phonebook.Domain.Response;
 using PS.Phonebook.Service.Implementations;
 using PS.Phonebook.Service.Interfaces;
 
@@ -12,7 +10,7 @@ namespace PS.Phonebook.Web.Configure
     {
         public static void InitializeRepository(this IServiceCollection services)
         {
-            //services.AddScoped<IDepartment, DepartmentRepository>();
+            services.AddScoped<IDepartment, DepartmentRepository>();
             services.AddScoped<IEmployee,EmployeeRepository>();
             services.AddScoped<IOrganization, OrganizationReposotiry>();
             services.AddScoped<IOrganization1,Organization1Repository>();

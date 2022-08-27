@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PS.Phonebook.DAL.Data;
+using PS.Phonebook.Web.Configure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,10 @@ namespace PS.Phonebook.Web
 
 
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+
+            services.InitializeRepository();
+            services.InitializeServices();
 
             services.AddControllersWithViews();
         }
