@@ -29,17 +29,17 @@ namespace PS.Phonebook.Web.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             var model = new EmployeesPhonebookViewModel();
             return View(model);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create(EmployeesPhonebookViewModel model)
         {
-            if (!ModelState.IsValid) { return View(model); }
+            if (ModelState.IsValid) { return View(model); }
 
             await _dbContext.CreateEmployeesPhonebookAsync(model);
 
@@ -48,7 +48,7 @@ namespace PS.Phonebook.Web.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id)
         {
             var response = await _dbContext.GetEmployeePhonebookAsync(id);
@@ -61,7 +61,7 @@ namespace PS.Phonebook.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(EmployeesPhonebookViewModel model)
         {
             if (!ModelState.IsValid) { return View(model); }
@@ -74,7 +74,7 @@ namespace PS.Phonebook.Web.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int id)
         {
             var response = await _dbContext.GetEmployeePhonebookAsync(id);
@@ -88,7 +88,7 @@ namespace PS.Phonebook.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(EmployeesPhonebookViewModel model)
         {
             if (ModelState.IsValid) { return View(model); }
