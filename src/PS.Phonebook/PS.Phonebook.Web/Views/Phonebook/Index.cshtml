@@ -13,165 +13,70 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Organization1.Name)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Organization2.Name)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Organization3.Name)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Index)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Fax1)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Fax2)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.CodeAMTC)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Site)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Department.Name)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Subdivision.Name)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Position.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Surname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.FirstName)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Patronymic)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.FramePhoneCode)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.FramePhone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Phone1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Phone2)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.Organization.Phone3)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.SellularPhone1)
-            </th>
-             <th>
-                @Html.DisplayNameFor(model => model.Employee.SellularPhone2)
-            </th>
+
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Organization1.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Organization2.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Organization3.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Index)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Address)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Fax1)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Fax2)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.CodeAMTC)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Email)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Site)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Department.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Subdivision.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Position.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Surname)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.FirstName)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Patronymic)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.FramePhoneCode)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.FramePhone)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Phone1)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Phone2)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.Organization.Phone3)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.SellularPhone1)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Employee.SellularPhone2)</th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr>
 
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Name)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Organization1.Name)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Organization2.Name)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Organization3.Name)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Index)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Address)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Fax1)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Fax2)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.CodeAMTC)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Email)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Site)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Department.Name)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Subdivision.Name)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Position.Name)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Surname)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.FirstName)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Patronymic)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.FramePhoneCode)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.FramePhone)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Phone1)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Phone2)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.Organization.Phone3)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.SellularPhone1)
-            </th>
-             <th>
-                @Html.DisplayFor(modelItem => item.Employee.SellularPhone2)
-            </th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Organization1.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Organization2.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Organization3.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Index)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Address)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Fax1)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Fax2)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.CodeAMTC)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Email)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Site)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Department.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Subdivision.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Position.Name)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Surname)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.FirstName)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Patronymic)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.FramePhoneCode)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.FramePhone)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Phone1)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Phone2)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.Organization.Phone3)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.SellularPhone1)</th>
+                <th>@Html.DisplayFor(modelItem => item.Employee.SellularPhone2)</th>
 
-
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
 }
     </tbody>
 </table>
