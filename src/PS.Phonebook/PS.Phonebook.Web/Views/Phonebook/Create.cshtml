@@ -1,5 +1,5 @@
 ﻿
-@model EmployeesPhonebookViewModel
+@model Unit
 
 @{
     ViewData["Title"] = "Add";
@@ -10,146 +10,89 @@
 <h4>Unit</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-controller="Phonebook" asp-action="Create" method="post">
+    <div>
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
+            <div class="row">
+
+
+                <div class="col-6">
+
+                    <div class="col-12">
+                        <div class="col-6">
+                            <div class="form-group"><label asp-for="Index" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group"><label asp-for="Index" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-group"><label asp-for="FirstName" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        <div class="form-group"><label asp-for="LastName" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        <div class="form-group"><label asp-for="Patronymic" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    </div>
+
+                    <div class="col-8">
+                        <div class="col-12">
+                            <div class="form-group"><label asp-for="Organization" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group"><label asp-for="Department" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                            <div class="form-group"><label asp-for="Subdivision" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                            <div class="form-group"><label asp-for="Position" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group"><label asp-for="Organization1" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                            <div class="form-group"><label asp-for="Organization2" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                            <div class="form-group"><label asp-for="Organization3" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="col-6">
+
+                    <div class="col-6">
+                        <div class="form-group"><label asp-for="SellularPhone1" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        <div class="form-group"><label asp-for="SellularPhone2" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group"><label asp-for="Address" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                        <div class="form-group"><label asp-for="Email" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    </div>
+
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group"><label asp-for="CodeAMTC" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    <div class="form-group"><label asp-for="FramePhoneCode" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    <div class="form-group"><label asp-for="FramePhone" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    <div class="form-group"><label asp-for="Phone1" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    <div class="form-group"><label asp-for="Phone2" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    <div class="form-group"><label asp-for="Phone3" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group"><label asp-for="Fax1" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                    <div class="form-group"><label asp-for="Fax2" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                </div>
+
+            </div>
 
 
 
 
-            <div class="form-group">
-                <label asp-for="@Model.FirstName" class="control-label"></label>
-                <input asp-for="@Model.FirstName" class="form-control" />
-                <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Surname" class="control-label"></label>
-                <input asp-for="@Model.Surname" class="form-control" />
-                <span asp-validation-for="@Model.Surname" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Patronymic" class="control-label"></label>
-                <input asp-for="@Model.Patronymic" class="form-control" />
-                <span asp-validation-for="@Model.Patronymic" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.SellularPhone1" class="control-label"></label>
-                <input asp-for="@Model.SellularPhone1" class="form-control" />
-                <span asp-validation-for="@Model.SellularPhone1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.SellularPhone2" class="control-label"></label>
-                <input asp-for="@Model.SellularPhone2" class="form-control" />
-                <span asp-validation-for="@Model.SellularPhone2" class="text-danger"></span>
-            </div>
-
-
-
-
-              <div class="form-group">
-                <label asp-for="@Model.FramePhoneCode" class="control-label"></label>
-                <input asp-for="@Model.FramePhoneCode" class="form-control" />
-                <span asp-validation-for="@Model.FramePhoneCode" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.FramePhone" class="control-label"></label>
-                <input asp-for="@Model.FramePhone" class="form-control" />
-                <span asp-validation-for="@Model.FramePhone" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Phone1" class="control-label"></label>
-                <input asp-for="@Model.Phone1" class="form-control" />
-                <span asp-validation-for="@Model.Phone1" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Phone2" class="control-label"></label>
-                <input asp-for="@Model.Phone2" class="form-control" />
-                <span asp-validation-for="@Model.Phone2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Phone3" class="control-label"></label>
-                <input asp-for="@Model.Phone3" class="form-control" />
-                <span asp-validation-for="@Model.Phone3" class="text-danger"></span>
-            </div>
-
-
-
-
-
-            <div class="form-group">
-                <label asp-for="@Model.OrganizationName" class="control-label"></label>
-                <input asp-for="@Model.OrganizationName" class="form-control" />
-                <span asp-validation-for="@Model.OrganizationName" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Organization1" class="control-label"></label>
-                <input asp-for="@Model.Organization1" class="form-control" />
-                <span asp-validation-for="@Model.Organization1" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Organization2" class="control-label"></label>
-                <input asp-for="@Model.Organization2" class="form-control" />
-                <span asp-validation-for="@Model.Organization2" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Organization3" class="control-label"></label>
-                <input asp-for="@Model.Organization3" class="form-control" />
-                <span asp-validation-for="@Model.Organization3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Index" class="control-label"></label>
-                <input asp-for="@Model.Index" class="form-control" />
-                <span asp-validation-for="@Model.Index" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Address" class="control-label"></label>
-                <input asp-for="@Model.Address" class="form-control" />
-                <span asp-validation-for="@Model.Address" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Fax1" class="control-label"></label>
-                <input asp-for="@Model.Fax1" class="form-control" />
-                <span asp-validation-for="@Model.Fax1" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Fax2" class="control-label"></label>
-                <input asp-for="@Model.Fax2" class="form-control" />
-                <span asp-validation-for="@Model.Fax2" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.CodeAMTC" class="control-label"></label>
-                <input asp-for="@Model.CodeAMTC" class="form-control" />
-                <span asp-validation-for="@Model.CodeAMTC" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Email" class="control-label"></label>
-                <input asp-for="@Model.Email" class="form-control" />
-                <span asp-validation-for="@Model.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Site" class="control-label"></label>
-                <input asp-for="@Model.Site" class="form-control" />
-                <span asp-validation-for="@Model.Site" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Department" class="control-label"></label>
-                <input asp-for="@Model.Department" class="form-control" />
-                <span asp-validation-for="@Model.Department" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Subdivision" class="control-label"></label>
-                <input asp-for="@Model.Subdivision" class="form-control" />
-                <span asp-validation-for="@Model.Subdivision" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="@Model.Position" class="control-label"></label>
-                <input asp-for="@Model.Position" class="form-control" />
-                <span asp-validation-for="@Model.Position" class="text-danger"></span>
-            </div>
-
-
+            <div class="form-group"><label asp-for="Name" class="control-label"></label><input asp-for="Name" class="form-control" /></div>
+                
+                
+            
 
 
 
