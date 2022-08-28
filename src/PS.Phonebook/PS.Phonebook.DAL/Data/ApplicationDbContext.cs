@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PS.Phonebook.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PS.Phonebook.DAL.Data
 {
@@ -23,5 +20,6 @@ namespace PS.Phonebook.DAL.Data
         public DbSet<Organization3> Organizations3 { get; set; } = null!;
         public DbSet<Position> Positions { get; set; } = null!;
         public DbSet<Subdivision> Subdivisions { get; set; } = null!;
+
     }
 }

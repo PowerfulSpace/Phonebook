@@ -18,6 +18,7 @@ namespace PS.Phonebook.Web.Configure
             services.AddScoped<IOrganization3,Organization3Repository>();
             services.AddScoped<IPosition,PositionRepository>();
             services.AddScoped<ISubdivision, SubdivisionRepository>();
+            services.AddScoped<IEmployeesPhonebook, EmployeesPhonebookRepository>();
         }
 
         public static void InitializeServices(this IServiceCollection services)

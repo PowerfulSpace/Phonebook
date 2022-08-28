@@ -23,7 +23,7 @@ namespace PS.Phonebook.Web.Controllers
                 return RedirectToAction("Error");
             }
 
-            return View(response.Data);
+            return View(response.Data.ToList());
         }
 
 
