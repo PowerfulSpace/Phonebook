@@ -1,5 +1,4 @@
-﻿
-@model EmployeesPhonebook
+﻿@model EmployeesPhonebook
 
 @{
     ViewData["Title"] = "Detail";
@@ -11,23 +10,83 @@
     <h4>Unit</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Employee.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Employee.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Employee.Organization.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Employee.Organization.Name)
-        </dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Name)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Organization1.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Organization1.Name)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Organization2.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Organization2.Name)</dd>
+       
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Organization3.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Organization3.Name)</dd>
+       
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Index)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Index)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Address)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Address)</dd>
+       
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Fax1)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Fax1)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Fax2)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Fax2)</dd>
+       
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.CodeAMTC)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.CodeAMTC)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Email)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Email)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Site)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Site)</dd>
+       
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Department.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Department.Name)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Subdivision.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Subdivision.Name)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Position.Name)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Position.Name)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Surname)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Surname)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.FirstName)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.FirstName)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Patronymic)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Patronymic)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.FramePhoneCode)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.FramePhoneCode)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.FramePhone)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.FramePhone)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Phone1)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Phone1)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Phone2)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Phone2)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.Organization.Phone3)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.Organization.Phone3)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.SellularPhone1)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.SellularPhone1)</dd>
+        
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Employee.SellularPhone2)</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.Employee.SellularPhone2)</dd>
     </dl>
 </div>
 <div>
-    @if(User.IsInRole("Admin")){
-        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+    @if (User.IsInRole("Admistrator"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
         <a asp-action="Index">Back to List</a>
-    }  
+    }
 </div>
