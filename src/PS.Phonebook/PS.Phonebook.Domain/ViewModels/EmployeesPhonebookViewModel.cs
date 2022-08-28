@@ -21,7 +21,7 @@ namespace PS.Phonebook.Domain.ViewModels
         public string Address { get; set; } = null!;
         [Display(Name = "факс 1")]
         public string Fax1 { get; set; } = null!;
-        [Display(Name = "факс 12")]
+        [Display(Name = "факс 2")]
         public string Fax2 { get; set; } = null!;
         [Display(Name = "Код АМТС")]
         public string CodeAMTC { get; set; } = null!;
