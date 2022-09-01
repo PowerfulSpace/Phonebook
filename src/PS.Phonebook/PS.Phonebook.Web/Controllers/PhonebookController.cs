@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PS.Phonebook.Domain.ViewModels;
+using PS.Phonebook.Service.Infrastructure;
 using PS.Phonebook.Service.Interfaces;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,11 +14,18 @@ namespace PS.Phonebook.Web.Controllers
         public PhonebookController(IEmployeesPhonebookService dbContext) => _dbContext = dbContext;
 
 
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        
+        public async Task<IActionResult> Index(string sortExpression = "", string searchText = "")
         {
-            var response = await _dbContext.GetAllEmployeesPhonebooksAsync();
+            var sortModel = new SortModel();
+            sortModel.AddColumn("employeName");
+            sortModel.AddColumn("companyName");
+            sortModel.ApplySort(sortExpression);
+            ViewData["SortModel"] = sortModel;
+            ViewData["SearchText"] = searchText;
 
+
+            var response = await _dbContext.GetAllEmployeesPhonebooksAsync(sortModel.SortProperty, sortModel.SortOrder, searchText);
             if(response.StatusCode != Domain.Enums.StatusCode.OK)
             {
                 return RedirectToAction("Error");
