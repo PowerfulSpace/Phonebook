@@ -7,6 +7,7 @@ using PS.Phonebook.Domain.ViewModels;
 using PS.Phonebook.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PS.Phonebook.Service.Implementations
@@ -88,7 +89,75 @@ namespace PS.Phonebook.Service.Implementations
             }
         }
 
-       
+        public async Task<IBaseResponse<IEnumerable<EmployeesPhonebook>>> GetAllEmployeesPhonebooksAsync(string propertyName, SortOrder sortOrder)
+        {
+            var baseResponse = new BaseResponse<IEnumerable<EmployeesPhonebook>>();
+
+            try
+            {
+                var items = await _dbRepository.GetAll().ToListAsync();
+
+                items = DoSort(items, propertyName, sortOrder);
+
+                if (items == null)
+                {
+                    baseResponse.Description = "GetAllEmployeesPhonebooksAsync not found";
+                    baseResponse.StatusCode = StatusCode.NotFound;
+                    return baseResponse;
+                }
+
+                baseResponse.Data = items;
+                baseResponse.StatusCode = StatusCode.OK;
+
+                return baseResponse;
+
+            }
+            catch (Exception e)
+            {
+                return new BaseResponse<IEnumerable<EmployeesPhonebook>>()
+                {
+                    Description = $"[GetAllEmployeesPhonebooksAsync] : {e.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<IBaseResponse<IEnumerable<EmployeesPhonebook>>> GetAllEmployeesPhonebooksAsync(string propertyName, SortOrder sortOrder, string searchText)
+        {
+            var baseResponse = new BaseResponse<IEnumerable<EmployeesPhonebook>>();
+
+            try
+            {
+                var items = await _dbRepository.GetAll(propertyName, sortOrder, searchText).ToListAsync();
+
+                items = DoSort(items, propertyName, sortOrder);
+
+                if (items == null)
+                {
+                    baseResponse.Description = "GetAllEmployeesPhonebooksAsync not found";
+                    baseResponse.StatusCode = StatusCode.NotFound;
+                    return baseResponse;
+                }
+
+                baseResponse.Data = items;
+                baseResponse.StatusCode = StatusCode.OK;
+
+                return baseResponse;
+
+            }
+            catch (Exception e)
+            {
+                return new BaseResponse<IEnumerable<EmployeesPhonebook>>()
+                {
+                    Description = $"[GetAllEmployeesPhonebooksAsync] : {e.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+
+
+
         public async Task<IBaseResponse<EmployeesPhonebook>> CreateEmployeesPhonebookAsync(EmployeesPhonebookViewModel model)
         {
             var baseResponse = new BaseResponse<EmployeesPhonebook>();
@@ -130,9 +199,6 @@ namespace PS.Phonebook.Service.Implementations
                 };
             }
         }
-
-
-
 
         public async Task<IBaseResponse<EmployeesPhonebook>> UpdateEmployeesPhonebookAsync(EmployeesPhonebookViewModel model)
         {
@@ -276,6 +342,28 @@ namespace PS.Phonebook.Service.Implementations
             };
 
             return employeesPhonebook;
+        }
+
+
+        private List<EmployeesPhonebook> DoSort(List<EmployeesPhonebook> units, string propertyName, SortOrder sortOrder)
+        {
+
+            if (propertyName.ToLower() == "name")
+            {
+                if (sortOrder == SortOrder.Ascending)
+                    units = units.OrderBy(x => x.Employee.FirstName).ToList();
+                else if (sortOrder == SortOrder.Descending)
+                    units = units.OrderByDescending(x => x.Employee.Organization.Name).ToList();
+            }
+            else if (propertyName.ToLower() == "description")
+            {
+                if (sortOrder == SortOrder.Ascending)
+                    units = units.OrderBy(x => x.Employee.FirstName).ToList();
+                else if (sortOrder == SortOrder.Descending)
+                    units = units.OrderByDescending(x => x.Employee.Organization.Name).ToList();
+            }
+
+            return units;
         }
 
         #endregion

@@ -2,6 +2,7 @@
 using PS.Phonebook.DAL.Data;
 using PS.Phonebook.DAL.Interfaces;
 using PS.Phonebook.Domain.Entities;
+using PS.Phonebook.Domain.Enums;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,27 @@ namespace PS.Phonebook.DAL.Repositories
         public async Task<EmployeesPhonebook> GetAsync(int id) => await _dbContext.EmployeesPhonebooks.FirstOrDefaultAsync(x => x.Id == id);
 
         public IQueryable<EmployeesPhonebook> GetAll() => _dbContext.EmployeesPhonebooks;
+
+
+        public IQueryable<EmployeesPhonebook> GetAll(string propertyName, SortOrder sortOrder) => _dbContext.EmployeesPhonebooks;
+        public IQueryable<EmployeesPhonebook> GetAll(string propertyName, SortOrder sortOrder, string searchText)
+        {
+            IQueryable<EmployeesPhonebook> employeesPhonebooks;
+
+            if (searchText != "" && searchText != null)
+            {
+                employeesPhonebooks = _dbContext.EmployeesPhonebooks.
+                    Where(x => x.Employee.FirstName.Contains(searchText) 
+                    || x.Employee.Organization.Name.Contains(searchText));
+            }
+            else
+            {
+                employeesPhonebooks = _dbContext.EmployeesPhonebooks;
+            }
+
+            return employeesPhonebooks;
+        }
+
 
 
         public async Task<EmployeesPhonebook> CreateAsync(EmployeesPhonebook entity)
